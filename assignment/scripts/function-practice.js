@@ -77,13 +77,14 @@ console.log('isPositive - should say false', isPositive(-3));
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
-let array = [7, 8, 9];
+let array = [7, 8, 4];
+let lastElement = array.pop();
 
 function getLast(array) {
   if (array.length > 0) {
-  return array.slice(-1);
+  return lastElement;
   } else {
-    return 'undefined';
+  return 'undefined';
   }
 }
 
@@ -93,11 +94,11 @@ console.log(getLast(array));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 
-let value = 9;
+let value = 4;
 
 function find(value, array) {
-  for (numberNine of array) {
-    if (numberNine === value) {
+  for (numberFour of array) {
+    if (numberFour === value) {
       return true;
     }
   } 
@@ -113,30 +114,54 @@ console.log(find(value, array));
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (letter === string.at(0)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+
+
+function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
-  // TODO: return the sum
+for (let i = 0; i < array.length; i++ ) {
+  sum += array[i];
+  }
+  return sum;
 }
+// TODO: return the sum
+
+console.log(sumAll(array));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
+let posAndNegArray = [-1, -5, 2, 6, -6, 7];
 
+function allPositive(posAndNegArray) {
+ const aboveZero = posAndNegArray.filter(num => num > 0); //I think this is defining num
+ return aboveZero;
 }
 
+console.log(allPositive(posAndNegArray));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+//Create a function that takes two numbers as arguments and returns their sum.
+
+function addition(a, b) {
+	let sum = a + b;
+	return sum;
+}
+
+console.log(addition(1, 2));
 
 
 // DO NOT MODIFY
