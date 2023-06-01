@@ -78,9 +78,9 @@ console.log('isPositive - should say false', isPositive(-3));
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 let array = [7, 8, 4];
-let lastElement = array.pop();
 
 function getLast(array) {
+  let lastElement = array[array.length-1];
   if (array.length > 0) {
   return lastElement;
   } else {
@@ -144,8 +144,8 @@ console.log(sumAll(array));
 let posAndNegArray = [-1, -5, 2, 6, -6, 7];
 
 function allPositive(posAndNegArray) {
- const aboveZero = posAndNegArray.filter(num => num > 0); //I think this is defining num
- return aboveZero;
+  const aboveZero = posAndNegArray.filter(num => num > 0); //I think this is defining num
+  return aboveZero;
 }
 
 console.log(allPositive(posAndNegArray));
